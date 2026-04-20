@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>聯盟願景集體敘畫｜引導員手冊</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+
+  :root {
+    --espresso: #3B2A1A;
+    --roast: #6B4226;
+    --caramel: #C8813B;
+    --latte: #E8C99A;
+    --cream: #F5EFE3;
+    --foam: #FAF6F0;
+    --stage-red: #8B2635;
+    --curtain: #6B1E2A;
+    --spotlight: #F2C14E;
+    --sage: #3B5C47;
+    --ink: #1C1410;
+    --muted: #7A6A5A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: var(--foam);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.75;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* COVER */
+  .cover {
+    background: var(--espresso);
+    color: var(--cream);
+    padding: 72px 64px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,129,59,0.2);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,129,59,0.15);
+  }
+  .cover-tag {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--caramel);
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+  .cover h1 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--cream);
+    margin-bottom: 16px;
+  }
+  .cover-sub {
+    font-size: 16px;
+    color: var(--latte);
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 32px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(200,129,59,0.3);
+  }
+  .cover-meta-item {
+    font-size: 12px;
+    color: var(--latte);
+  }
+  .cover-meta-item strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--caramel);
+    margin-bottom: 2px;
+  }
+
+  /* NAV / COFFEE BAR */
+  .coffee-bar {
+    background: var(--roast);
+    padding: 20px 64px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+  .coffee-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    white-space: nowrap;
+    text-decoration: none;
+    color: var(--latte);
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+  .coffee-item:last-child { border-right: none; }
+  .coffee-item:hover { color: var(--cream); }
+  .coffee-item .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--caramel);
+    flex-shrink: 0;
+  }
+
+  /* SECTION WRAPPER */
+  .section {
+    padding: 56px 64px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--caramel);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .section h2 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--espresso);
+    margin-bottom: 8px;
+    line-height: 1.35;
+  }
+  .section .lead {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 36px;
+    max-width: 560px;
+  }
+
+  /* METAPHOR GRID */
+  .metaphor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .metaphor-card {
+    background: var(--cream);
+    border: 1px solid rgba(200,129,59,0.2);
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+  .metaphor-card.full { grid-column: span 2; }
+  .metaphor-card .m-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--caramel);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .metaphor-card h3 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 17px;
+    color: var(--espresso);
+    margin-bottom: 8px;
+  }
+  .metaphor-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .metaphor-card .meta-badge {
+    display: inline-block;
+    background: var(--espresso);
+    color: var(--latte);
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+
+  /* THEATRE ROLES TABLE */
+  .roles-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+  }
+  .roles-table th {
+    background: var(--espresso);
+    color: var(--latte);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 10px 16px;
+    text-align: left;
+    letter-spacing: 0.05em;
+  }
+  .roles-table th:first-child { border-radius: 8px 0 0 0; }
+  .roles-table th:last-child { border-radius: 0 8px 0 0; }
+  .roles-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    font-size: 14px;
+    vertical-align: top;
+    color: var(--ink);
+  }
+  .roles-table tr:last-child td { border-bottom: none; }
+  .roles-table tr:nth-child(even) td { background: rgba(200,129,59,0.04); }
+  .role-name {
+    font-weight: 500;
+    color: var(--roast);
+    white-space: nowrap;
+  }
+  .role-sub {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* TIMELINE / FLOW */
+  .flow-container {
+    position: relative;
+  }
+  .flow-header {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .act-badge {
+    background: var(--stage-red);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .act-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 18px;
+    color: var(--espresso);
+  }
+  .act-time {
+    margin-left: auto;
+    font-size: 13px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .step-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+    position: relative;
+    border-left: 4px solid var(--caramel);
+  }
+  .step-card.rest {
+    background: var(--foam);
+    border-left-color: var(--muted);
+    opacity: 0.8;
+  }
+  .step-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .step-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--caramel);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .step-num.rest-num {
+    background: var(--muted);
+  }
+  .step-info { flex: 1; }
+  .step-name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--espresso);
+    margin-bottom: 2px;
+  }
+  .step-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .step-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .step-time-badge {
+    background: var(--espresso);
+    color: var(--latte);
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .step-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 600px) {
+    .step-body { grid-template-columns: 1fr; }
+    .metaphor-grid { grid-template-columns: 1fr; }
+    .metaphor-card.full { grid-column: span 1; }
+  }
+
+  .step-col h4 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--caramel);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .step-col p, .step-col li {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  .step-col ul {
+    padding-left: 16px;
+  }
+  .step-col li {
+    margin-bottom: 6px;
+  }
+
+  .prompt-box {
+    background: var(--cream);
+    border-left: 3px solid var(--caramel);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--espresso);
+    font-style: italic;
+    line-height: 1.65;
+  }
+  .prompt-box .prompt-label {
+    font-style: normal;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--caramel);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
+  .materials-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .mat-tag {
+    background: var(--foam);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 20px;
+    font-size: 12px;
+    color: var(--muted);
+    padding: 3px 12px;
+  }
+
+  /* ACT DIVIDER */
+  .act-divider {
+    background: var(--espresso);
+    color: var(--cream);
+    padding: 20px 64px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .act-divider .act-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--caramel);
+  }
+  .act-divider .act-big {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--cream);
+  }
+  .act-divider .act-dur {
+    margin-left: auto;
+    font-size: 13px;
+    color: var(--latte);
+  }
+  .act-line {
+    width: 1px;
+    height: 40px;
+    background: rgba(200,129,59,0.5);
+  }
+
+  /* TEAM SECTION */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .team-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+  .team-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .team-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--espresso);
+    margin-bottom: 2px;
+  }
+  .team-dept {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* KEY PRINCIPLES */
+  .principles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .principle-card {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 20px 24px;
+    border: 1px solid rgba(200,129,59,0.15);
+  }
+  .principle-num {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 36px;
+    color: rgba(200,129,59,0.3);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .principle-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--espresso);
+    margin-bottom: 8px;
+  }
+  .principle-body {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--espresso);
+    color: var(--latte);
+    padding: 32px 64px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer .footer-brand {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 15px;
+    color: var(--cream);
+  }
+
+  @media print {
+    .act-divider { break-before: page; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-tag">後台夥伴引導員手冊 ｜ 共識營 2026</div>
+  <h1>聯盟願景集體敘畫<br>引導員工作手冊</h1>
+  <div class="cover-sub">在咖啡香中演繹教育舞台的共創流程</div>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><strong>14</strong>所學校</div>
+    <div class="cover-meta-item"><strong>170</strong>分鐘</div>
+    <div class="cover-meta-item"><strong>3</strong>幕流程</div>
+    <div class="cover-meta-item"><strong>14</strong>位引導員</div>
+  </div>
+</div>
+
+<!-- NAV BAR -->
+<div class="coffee-bar">
+  <a class="coffee-item" href="#index"><span class="dot"></span>目錄</a>
+  <a class="coffee-item" href="#metaphor"><span class="dot"></span>咖啡比喻</a>
+  <a class="coffee-item" href="#roles"><span class="dot"></span>劇場角色</a>
+  <a class="coffee-item" href="#act1"><span class="dot"></span>Act 1・定調</a>
+  <a class="coffee-item" href="#act2"><span class="dot"></span>Act 2・交流</a>
+  <a class="coffee-item" href="#act3"><span class="dot"></span>Act 3・落地</a>
+  <a class="coffee-item" href="#team"><span class="dot"></span>引導員名單</a>
+  <a class="coffee-item" href="#principles"><span class="dot"></span>核心原則</a>
+</div>
+
+<!-- INDEX PAGE -->
+<div class="section" id="index" style="background: var(--foam);">
+  <div class="section-label">手冊目錄</div>
+  <h2 style="margin-bottom: 4px;">今天你需要知道的一切</h2>
+  <p class="lead" style="margin-bottom: 40px;">點擊任一章節直接跳轉。建議在活動前先讀完「咖啡比喻」與「劇場角色」，現場時則隨時查閱對應的幕次。</p>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px;">
+
+    <a href="#metaphor" style="text-decoration: none;">
+      <div style="background: #fff; border: 1px solid rgba(200,129,59,0.25); border-radius: 12px; padding: 20px 24px; cursor: pointer; transition: border-color 0.15s;" onmouseover="this.style.borderColor='#C8813B'" onmouseout="this.style.borderColor='rgba(200,129,59,0.25)'">
+        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 6px;">01 ・ 讀前必備</div>
+        <div style="font-size: 17px; font-weight: 700; color: var(--espresso); margin-bottom: 6px;">咖啡比喻</div>
+        <div style="font-size: 13px; color: var(--muted); line-height: 1.6;">聯盟基底 vs 學校風味。理解「為什麼是咖啡」，才能在引導中自然地用這個語言說話。</div>
+      </div>
+    </a>
+
+    <a href="#roles" style="text-decoration: none;">
+      <div style="background: #fff; border: 1px solid rgba(200,129,59,0.25); border-radius: 12px; padding: 20px 24px; cursor: pointer; transition: border-color 0.15s;" onmouseover="this.style.borderColor='#C8813B'" onmouseout="this.style.borderColor='rgba(200,129,59,0.25)'">
+        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 6px;">02 ・ 讀前必備</div>
+        <div style="font-size: 17px; font-weight: 700; color: var(--espresso); margin-bottom: 6px;">劇場角色對照</div>
+        <div style="font-size: 13px; color: var(--muted); line-height: 1.6;">舞台、劇本、角色……每個隱喻對應的學校場域，以及現場可以說的話。</div>
+      </div>
+    </a>
+  </div>
+
+  <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); font-weight: 500; margin-bottom: 12px; padding-left: 4px;">活動流程 ── 170 分鐘</div>
+
+  <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px;">
+
+    <a href="#act1" style="text-decoration: none;">
+      <div style="background: var(--espresso); border-radius: 12px; padding: 18px 24px; display: flex; align-items: center; gap: 20px; cursor: pointer;">
+        <div style="flex-shrink: 0; background: var(--stage-red); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; white-space: nowrap;">Act 1</div>
+        <div style="flex: 1;">
+          <div style="font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 3px;">定調與畫出願景</div>
+          <div style="font-size: 12px; color: var(--latte);">開場定調 → 各校敘畫 → 動線切換</div>
+        </div>
+        <div style="display: flex; gap: 16px; flex-shrink: 0;">
+          <div style="text-align: center;">
+            <div style="font-size: 18px; font-weight: 700; color: var(--caramel);">50</div>
+            <div style="font-size: 10px; color: var(--latte); letter-spacing: 0.1em;">分鐘</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 18px; font-weight: 700; color: var(--caramel);">2</div>
+            <div style="font-size: 10px; color: var(--latte); letter-spacing: 0.1em;">步驟</div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <a href="#act2" style="text-decoration: none;">
+      <div style="background: var(--roast); border-radius: 12px; padding: 18px 24px; display: flex; align-items: center; gap: 20px; cursor: pointer;">
+        <div style="flex-shrink: 0; background: var(--stage-red); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; white-space: nowrap;">Act 2</div>
+        <div style="flex: 1;">
+          <div style="font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 3px;">交流與肢體內化</div>
+          <div style="font-size: 12px; color: var(--latte);">藝廊分享 → 原校沈澱 → Embody 準備</div>
+        </div>
+        <div style="display: flex; gap: 16px; flex-shrink: 0;">
+          <div style="text-align: center;">
+            <div style="font-size: 18px; font-weight: 700; color: var(--caramel);">35</div>
+            <div style="font-size: 10px; color: var(--latte); letter-spacing: 0.1em;">分鐘</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 18px; font-weight: 700; color: var(--caramel);">3</div>
+            <div style="font-size: 10px; color: var(--latte); letter-spacing: 0.1em;">步驟</div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <a href="#act3" style="text-decoration: none;">
+      <div style="background: #4A3020; border-radius: 12px; padding: 18px 24px; display: flex; align-items: center; gap: 20px; cursor: pointer;">
+        <div style="flex-shrink: 0; background: var(--stage-red); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; white-space: nowrap;">Act 3</div>
+        <div style="flex: 1;">
+          <div style="font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 3px;">展演與實踐落地</div>
+          <div style="font-size: 12px; color: var(--latte);">集體展演 → 休息 → 深度對話 → Harvest → 結語</div>
+        </div>
+        <div style="display: flex; gap: 16px; flex-shrink: 0;">
+          <div style="text-align: center;">
+            <div style="font-size: 18px; font-weight: 700; color: var(--caramel);">85</div>
+            <div style="font-size: 10px; color: var(--latte); letter-spacing: 0.1em;">分鐘</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 18px; font-weight: 700; color: var(--caramel);">4</div>
+            <div style="font-size: 10px; color: var(--latte); letter-spacing: 0.1em;">步驟</div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+    <a href="#team" style="text-decoration: none;">
+      <div style="background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 18px 24px; cursor: pointer; transition: border-color 0.15s;" onmouseover="this.style.borderColor='#C8813B'" onmouseout="this.style.borderColor='rgba(0,0,0,0.08)'">
+        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 6px;">附錄</div>
+        <div style="font-size: 17px; font-weight: 700; color: var(--espresso); margin-bottom: 4px;">14 位引導員名單</div>
+        <div style="font-size: 13px; color: var(--muted);">各部門夥伴一覽，含待確認人員。</div>
+      </div>
+    </a>
+    <a href="#principles" style="text-decoration: none;">
+      <div style="background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 18px 24px; cursor: pointer; transition: border-color 0.15s;" onmouseover="this.style.borderColor='#C8813B'" onmouseout="this.style.borderColor='rgba(0,0,0,0.08)'">
+        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 6px;">附錄</div>
+        <div style="font-size: 17px; font-weight: 700; color: var(--espresso); margin-bottom: 4px;">四個核心原則</div>
+        <div style="font-size: 13px; color: var(--muted);">從 Flow Map 提煉的引導員心法。</div>
+      </div>
+    </a>
+  </div>
+
+</div>
+
+<!-- METAPHOR SECTION -->
+<div class="section" id="metaphor">
+  <div class="section-label">核心意象</div>
+  <h2>為什麼是「咖啡」？</h2>
+  <p class="lead">每一所學校都是一杯獨特風味的咖啡——但它們都源自同一份基底，都在同一個聯盟的杯子裡。</p>
+
+  <div class="metaphor-grid">
+    <div class="metaphor-card">
+      <div class="m-label">Espresso 基底</div>
+      <h3>聯盟共有的信念</h3>
+      <p>「給孩子公平發展天賦的舞台」——這是所有學校共同承諾的底蘊，是讓系統變革得以發生的共識基礎。</p>
+      <span class="meta-badge">不可被稀釋</span>
+    </div>
+    <div class="metaphor-card">
+      <div class="m-label">School Flavors 風味</div>
+      <h3>14 所學校的殊異性</h3>
+      <p>拿鐵、卡布奇諾、摩卡——每所學校因應在地利害關係人、社會場域，長出了自己的獨特樣貌。</p>
+      <span class="meta-badge">被允許、被尊重</span>
+    </div>
+    <div class="metaphor-card full">
+      <div class="m-label">引導員記住這句話</div>
+      <h3>願景是活的，可以拆除，可以重組</h3>
+      <p>基金會的立場宣示：聯盟在實踐過程中可以不斷被重組，這不是失敗，是真實的系統變革。你的任務是讓老師們感受到「我們都在同一杯咖啡裡」——不是頂層指令，而是流動的、有機的、可落地的共同體。</p>
+    </div>
+  </div>
+
+  <div style="background: var(--espresso); border-radius: 12px; padding: 24px 32px; color: var(--cream);">
+    <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); margin-bottom: 12px; font-weight: 500;">今天的雙重目標</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+      <div>
+        <div style="font-size: 22px; color: var(--caramel); font-weight: 700; margin-bottom: 6px;">①</div>
+        <div style="font-size: 15px; font-weight: 500; margin-bottom: 6px;">從「小我」到「大我」</div>
+        <div style="font-size: 13px; color: var(--latte);">讓每位老師從「我在我的學校」過渡到「我們在同一個聯盟」的感受與認同。</div>
+      </div>
+      <div>
+        <div style="font-size: 22px; color: var(--caramel); font-weight: 700; margin-bottom: 6px;">②</div>
+        <div style="font-size: 15px; font-weight: 500; margin-bottom: 6px;">接收聯盟的真誠宣示</div>
+        <div style="font-size: 13px; color: var(--latte);">讓每所學校真正感受到：聯盟允許、甚至歡迎你成為自己的樣貌。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- THEATRE ROLES -->
+<div class="section" id="roles">
+  <div class="section-label">劇場意象</div>
+  <h2>每個角色，都在同一個舞台上</h2>
+  <p class="lead">今天的工作坊使用「劇場」作為引導意象。你需要了解每個角色的定位，才能在引導中自然地帶出這些隱喻。</p>
+
+  <table class="roles-table">
+    <thead>
+      <tr>
+        <th>劇場元素</th>
+        <th>學校場域對應</th>
+        <th>引導時的說話方式</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="role-name">舞台 Stage</span><br><span class="role-sub">物理+心理空間</span></td>
+        <td>學校環境與文化底蘊</td>
+        <td>「你們學校的舞台，不只是空間，更是讓師生敢於冒險的心理安全感。」</td>
+      </tr>
+      <tr>
+        <td><span class="role-name">劇本 Script</span><br><span class="role-sub">即興生成的軌跡</span></td>
+        <td>課程、教材與核心理念</td>
+        <td>「劇本不是預設的指令，是師生共同走出來的路。」</td>
+      </tr>
+      <tr>
+        <td><span class="role-name">角色 Character</span><br><span class="role-sub">主體</span></td>
+        <td>學生／孩子</td>
+        <td>「今天我們畫的，是孩子從被動演出者，轉化為自己人生編劇的那個舞台。」</td>
+      </tr>
+      <tr>
+        <td><span class="role-name">說故事的人 Storyteller</span><br><span class="role-sub">串連者</span></td>
+        <td>基金會</td>
+        <td>「基金會不是下令，而是讓 14 個故事看見彼此、不孤單的人。」</td>
+      </tr>
+      <tr>
+        <td><span class="role-name">場景調度者 Host</span><br><span class="role-sub">護持空間</span></td>
+        <td>校長與行政團隊</td>
+        <td>「校長是護持這個空間的人，行政是支持，不是干擾。」</td>
+      </tr>
+      <tr>
+        <td><span class="role-name">領航員 Navigator</span><br><span class="role-sub">與孩子共舞</span></td>
+        <td>學校教師群</td>
+        <td>「老師不躲在幕後，而是在舞台上與孩子一起跳舞，用生命引發能動性。」</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ACT 1 DIVIDER -->
+<div class="act-divider" id="act1">
+  <div>
+    <div class="act-label">Act 1</div>
+    <div class="act-big">定調與畫出願景</div>
+  </div>
+  <div class="act-line"></div>
+  <div class="act-dur">共 50 分鐘</div>
+</div>
+
+<div class="section">
+  <!-- STEP: 開場定調 -->
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">1</div>
+      <div class="step-info">
+        <div class="step-name">基底與風味：看見 WE 的舞台</div>
+        <div class="step-meta">
+          <span>開場定調</span>
+          <span>全體參與</span>
+        </div>
+      </div>
+      <div class="step-time-badge">15 分鐘</div>
+    </div>
+    <div class="step-body">
+      <div class="step-col">
+        <h4>活動內容</h4>
+        <ul>
+          <li>說明「咖啡比喻」：聯盟基底與學校風味</li>
+          <li>帶入「劇場元素」隱喻（舞台、劇本、角色、校長作為場景調度者等）</li>
+          <li>全體宣告：14 所學校，14 個不同的舞台</li>
+        </ul>
+      </div>
+      <div class="step-col">
+        <h4>引導語</h4>
+        <div class="prompt-box">
+          <div class="prompt-label">說給全體聽</div>
+          「我們在同一個聯盟，但我們容許 14 所學校長出 14 個不同的舞台。這是一個可以不斷拆除、重組的有機過程。」
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 16px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 8px;">引導員任務</div>
+      <p style="font-size: 14px; color: var(--muted);">確認該校夥伴已就座、協助安定氛圍。此時的角色是「護持空間」，不需要發言。</p>
+    </div>
+    <div style="margin-top: 12px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 8px;">器材</div>
+      <div class="materials-list">
+        <span class="mat-tag">劇場元素對照簡報</span>
+        <span class="mat-tag">咖啡比喻投影片</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP: 敘畫 -->
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div class="step-info">
+        <div class="step-name">Bottom-up 各校願景敘畫</div>
+        <div class="step-meta">
+          <span>各校獨立</span>
+          <span>腦與手</span>
+        </div>
+      </div>
+      <div class="step-time-badge">30 分鐘</div>
+    </div>
+    <div class="step-body">
+      <div class="step-col">
+        <h4>活動內容</h4>
+        <ul>
+          <li>各校使用全開畫紙，運用複合媒材</li>
+          <li>畫出屬於自己學校的「給孩子公平發展天賦的舞台」</li>
+          <li>可結合賽璐珞片、毛線、拼貼等媒材</li>
+        </ul>
+      </div>
+      <div class="step-col">
+        <h4>引導語</h4>
+        <div class="prompt-box">
+          <div class="prompt-label">說給各校聽</div>
+          「請結合你們的物理空間、制度限制與特色，畫出我們學校陪伴孩子找到光的舞台長什麼樣子？」
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 16px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 8px;">引導員任務</div>
+      <ul style="font-size: 14px; color: var(--muted); padding-left: 20px; line-height: 1.9;">
+        <li>從旁觀察，不介入畫的過程</li>
+        <li>觀察校長的節點作用——是否支持 Bottom-up 動能？</li>
+        <li>記錄關鍵對話（不需要發表，僅供後續整理）</li>
+      </ul>
+    </div>
+    <div style="margin-top: 12px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 8px;">器材</div>
+      <div class="materials-list">
+        <span class="mat-tag">全開畫紙</span>
+        <span class="mat-tag">彩色筆</span>
+        <span class="mat-tag">賽璐珞片</span>
+        <span class="mat-tag">毛線</span>
+        <span class="mat-tag">剪刀膠水</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP: 動線切換 -->
+  <div class="step-card rest">
+    <div class="step-header">
+      <div class="step-num rest-num">→</div>
+      <div class="step-info">
+        <div class="step-name">動線切換：帶著完成的畫作移動</div>
+        <div class="step-meta"><span>全體移動</span></div>
+      </div>
+      <div class="step-time-badge">5 分鐘</div>
+    </div>
+    <p style="font-size: 14px; color: var(--muted);">帶著完成的畫作，全體移動準備進行藝廊分享。引導員協助確認各校畫作已備妥、協助場地轉換。</p>
+  </div>
+</div>
+
+<!-- ACT 2 DIVIDER -->
+<div class="act-divider" id="act2">
+  <div>
+    <div class="act-label">Act 2</div>
+    <div class="act-big">交流與肢體內化</div>
+  </div>
+  <div class="act-line"></div>
+  <div class="act-dur">共 35 分鐘</div>
+</div>
+
+<div class="section">
+  <!-- STEP: 藝廊分享 -->
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div class="step-info">
+        <div class="step-name">未知解讀：藝廊分享</div>
+        <div class="step-meta">
+          <span>跨校 4 人小組</span>
+          <span>迎向未知</span>
+        </div>
+      </div>
+      <div class="step-time-badge">15 分鐘</div>
+    </div>
+    <div class="step-body">
+      <div class="step-col">
+        <h4>活動內容</h4>
+        <ul>
+          <li>以 4 人為單位（需打散學校）</li>
+          <li>「讀者」解讀畫作，不是作者解釋</li>
+          <li>每輪 3 分鐘，敲鈴換組，共看三輪</li>
+        </ul>
+      </div>
+      <div class="step-col">
+        <h4>引導語</h4>
+        <div class="prompt-box">
+          <div class="prompt-label">說給全體聽</div>
+          「請放下作者的執念。現在，請觀看者用直覺告訴大家，你在這張圖裡看見了什麼舞台？看見了什麼驚喜？」
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 16px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 8px;">引導員任務</div>
+      <ul style="font-size: 14px; color: var(--muted); padding-left: 20px; line-height: 1.9;">
+        <li>控制全場時間節奏</li>
+        <li>每 3 分鐘準時敲鈴換組</li>
+        <li>確保大家專注於「聆聽他校的解讀」，而非辯論</li>
+      </ul>
+    </div>
+    <div style="margin-top: 12px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 8px;">器材</div>
+      <div class="materials-list">
+        <span class="mat-tag">清脆頌缽或引導鈴</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP: 啟發回流 -->
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <div class="step-info">
+        <div class="step-name">啟發回流：原校圍圈對話</div>
+        <div class="step-meta">
+          <span>各校獨立</span>
+          <span>原校沉澱</span>
+        </div>
+      </div>
+      <div class="step-time-badge">10 分鐘</div>
+    </div>
+    <div class="step-body">
+      <div class="step-col">
+        <h4>活動內容</h4>
+        <ul>
+          <li>回到原本學校的圍圈</li>
+          <li>分享剛剛聽到的「未知解讀」帶來了什麼新啟發</li>
+          <li>不需要急著收斂，讓發現自然浮現</li>
+        </ul>
+      </div>
+      <div class="step-col">
+        <h4>引導語</h4>
+        <div class="prompt-box">
+          <div class="prompt-label">說給各校聽</div>
+          「剛剛別人看我們學校的舞台，有什麼是我們自己沒發現的？有什麼新的創發？」
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 16px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 8px;">引導員任務</div>
+      <p style="font-size: 14px; color: var(--muted);">側聽並記錄各校對「被解讀」的反應與新發現。此刻是沉澱時間，不急著收斂，讓對話自然流動。</p>
+    </div>
+  </div>
+
+  <!-- STEP: Embody -->
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">5</div>
+      <div class="step-info">
+        <div class="step-name">Embody 準備：肢體雕塑設計</div>
+        <div class="step-meta">
+          <span>各校獨立</span>
+          <span>心與肢體</span>
+        </div>
+      </div>
+      <div class="step-time-badge">10 分鐘</div>
+    </div>
+    <div class="step-body">
+      <div class="step-col">
+        <h4>活動內容</h4>
+        <ul>
+          <li>各校討論與排練：將願景轉化為動態或靜態的肢體雕塑</li>
+          <li>可呈現時間變化（KIST 1.0 → 2.0）</li>
+          <li>所有人必須參與，遵循直覺</li>
+        </ul>
+      </div>
+      <div class="step-col">
+        <h4>引導語</h4>
+        <div class="prompt-box">
+          <div class="prompt-label">說給各校聽</div>
+          「接下來我們不說話，用肢體展現。你有 6 分鐘準備。所有人都要參與，遵循直覺，可以是靜態定格或流動的雕塑。」
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 16px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 8px;">引導員特別任務</div>
+      <div style="background: rgba(139,38,53,0.07); border-left: 3px solid var(--stage-red); padding: 12px 16px; border-radius: 0 8px 8px 0;">
+        <p style="font-size: 14px; color: var(--stage-red); font-weight: 500; margin-bottom: 6px;">消弭「在傘下」與「在其中」的距離</p>
+        <p style="font-size: 13px; color: var(--muted);">觀察那些「不容易進入狀況」的老師，溫柔地邀請他們參與。可提供角色掛牌協助定位，讓每個人找到自己在舞台上的位置。</p>
+      </div>
+    </div>
+    <div style="margin-top: 12px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 8px;">器材</div>
+      <div class="materials-list">
+        <span class="mat-tag">空白掛牌</span>
+        <span class="mat-tag">粗麥克筆</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ACT 3 DIVIDER -->
+<div class="act-divider" id="act3">
+  <div>
+    <div class="act-label">Act 3</div>
+    <div class="act-big">展演與實踐落地</div>
+  </div>
+  <div class="act-line"></div>
+  <div class="act-dur">共 85 分鐘</div>
+</div>
+
+<div class="section">
+  <!-- STEP: 時間之河 -->
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">6</div>
+      <div class="step-info">
+        <div class="step-name">時間之河：集體舞台展演</div>
+        <div class="step-meta">
+          <span>全體開放空間</span>
+          <span>心領神會</span>
+        </div>
+      </div>
+      <div class="step-time-badge">20 分鐘</div>
+    </div>
+    <div class="step-body">
+      <div class="step-col">
+        <h4>活動內容</h4>
+        <ul>
+          <li>14 校分四輪上台展演（4-4-3-3，同時在不同角落）</li>
+          <li>每輪表演完定格 20 秒沈澱</li>
+          <li>敲鈴換下一輪</li>
+        </ul>
+      </div>
+      <div class="step-col">
+        <h4>引導語</h4>
+        <div class="prompt-box">
+          <div class="prompt-label">說給全體聽</div>
+          「請大家在開放空間自由觀看。表演結束後請定格 20 秒，讓畫面進到心裡，感受我們都在這條時間之河裡。」
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 16px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 8px;">引導員最關鍵任務</div>
+      <div style="background: rgba(139,38,53,0.07); border-left: 3px solid var(--stage-red); padding: 12px 16px; border-radius: 0 8px 8px 0;">
+        <p style="font-size: 14px; color: var(--stage-red); font-weight: 500; margin-bottom: 6px;">護持空間（Holding-Space）</p>
+        <p style="font-size: 13px; color: var(--muted);">在定格的 20 秒內，引導師帶頭保持絕對安靜。這個安靜本身就是引導——讓沈默有份量。負責敲鈴切換輪次。</p>
+      </div>
+    </div>
+    <div style="margin-top: 12px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 8px;">器材</div>
+      <div class="materials-list">
+        <span class="mat-tag">清脆頌缽或引導鈴</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- REST -->
+  <div class="step-card rest">
+    <div class="step-header">
+      <div class="step-num rest-num">✦</div>
+      <div class="step-info">
+        <div class="step-name">中場休息</div>
+        <div class="step-meta"><span>讓沉澱繼續發酵</span></div>
+      </div>
+      <div class="step-time-badge">15 分鐘</div>
+    </div>
+    <p style="font-size: 14px; color: var(--muted);">讓剛剛沉浸後的感受在心中發酵。引導員可以與參與者輕聲交流，但不要急著導向結論。</p>
+  </div>
+
+  <!-- STEP: 1-2-4 -->
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">7</div>
+      <div class="step-info">
+        <div class="step-name">圍圈再思：1-2-4 深度對話</div>
+        <div class="step-meta">
+          <span>各校</span>
+          <span>腦與收斂</span>
+        </div>
+      </div>
+      <div class="step-time-badge">25 分鐘</div>
+    </div>
+    <div style="margin-bottom: 16px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 10px;">1-2-4 架構</div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 120px; background: var(--cream); border-radius: 8px; padding: 12px 16px; border: 1px solid rgba(200,129,59,0.2);">
+          <div style="font-size: 24px; font-weight: 700; color: var(--caramel);">1</div>
+          <div style="font-size: 13px; color: var(--muted);">分鐘自我沈澱</div>
+        </div>
+        <div style="flex: 1; min-width: 120px; background: var(--cream); border-radius: 8px; padding: 12px 16px; border: 1px solid rgba(200,129,59,0.2);">
+          <div style="font-size: 24px; font-weight: 700; color: var(--caramel);">2</div>
+          <div style="font-size: 13px; color: var(--muted);">人配對分享 4 分鐘</div>
+        </div>
+        <div style="flex: 1; min-width: 120px; background: var(--cream); border-radius: 8px; padding: 12px 16px; border: 1px solid rgba(200,129,59,0.2);">
+          <div style="font-size: 24px; font-weight: 700; color: var(--caramel);">4</div>
+          <div style="font-size: 13px; color: var(--muted);">人→全體圍圈 20 分</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-bottom: 16px;">
+      <h4 style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 8px;">兩個核心提問</h4>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div class="prompt-box">剛剛的肢體雕塑如何觸動到你？</div>
+        <div class="prompt-box">在我們學校，為了這個舞台，我們具體可以怎麼做？</div>
+      </div>
+    </div>
+    <div>
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 8px;">引導員任務</div>
+      <p style="font-size: 14px; color: var(--muted);">控管 1-2-4 的時間節奏，確保討論不發散、不被單一人壟斷對話。當討論偏離時，溫柔地用提問拉回。</p>
+    </div>
+    <div style="margin-top: 12px;">
+      <div class="materials-list">
+        <span class="mat-tag">便利貼</span>
+        <span class="mat-tag">原子筆</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP: Harvest -->
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">8</div>
+      <div class="step-info">
+        <div class="step-name">Harvest：萃取關鍵行動</div>
+        <div class="step-meta">
+          <span>各校</span>
+          <span>落地實踐</span>
+        </div>
+      </div>
+      <div class="step-time-badge">15 分鐘</div>
+    </div>
+    <div class="step-body">
+      <div class="step-col">
+        <h4>活動內容</h4>
+        <ul>
+          <li>各校萃取最重要的「一個點」</li>
+          <li>聚焦於制度管理或具體做法</li>
+          <li>非冗長報告，而是最精煉的一句話</li>
+        </ul>
+      </div>
+      <div class="step-col">
+        <h4>引導語</h4>
+        <div class="prompt-box">
+          <div class="prompt-label">說給各校聽</div>
+          「如果新學期只能帶走一個改變，那會是什麼？請寫下最精煉的具體做法或制度調整。」
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 16px;">
+      <div style="background: rgba(59,92,71,0.08); border-left: 3px solid var(--sage); padding: 12px 16px; border-radius: 0 8px 8px 0;">
+        <p style="font-size: 14px; color: var(--sage); font-weight: 500; margin-bottom: 4px;">提醒夥伴們</p>
+        <p style="font-size: 13px; color: var(--muted);">「這不是一次性的感動，我們要拉出進步的軸線。」協助校長與老師收斂到具體可行的行動，確認產出真的可以在新學期實踐。</p>
+      </div>
+    </div>
+    <div style="margin-top: 12px;">
+      <div class="materials-list">
+        <span class="mat-tag">大張海報紙或白板</span>
+        <span class="mat-tag">粗麥克筆</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP: 結語 -->
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">9</div>
+      <div class="step-info">
+        <div class="step-name">進步的敘事：看見連續性</div>
+        <div class="step-meta">
+          <span>全體</span>
+          <span>結語賦歸</span>
+        </div>
+      </div>
+      <div class="step-time-badge">10 分鐘</div>
+    </div>
+    <div class="step-body">
+      <div class="step-col">
+        <h4>活動內容</h4>
+        <ul>
+          <li>14 校的「一個關鍵行動」貼在同一面牆</li>
+          <li>14 張敘畫旁邊，形成集體舞台</li>
+          <li>基金會結語與宣告</li>
+        </ul>
+      </div>
+      <div class="step-col">
+        <h4>結語引導語</h4>
+        <div class="prompt-box">
+          <div class="prompt-label">基金會說給全體聽</div>
+          「願景是活的。實踐中可以不斷拆除與重組。今天我們看見了 14 種風味，但也確認了我們都在同一杯咖啡裡。」
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 16px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--caramel); font-weight: 500; margin-bottom: 8px;">引導員任務</div>
+      <p style="font-size: 14px; color: var(--muted);">協助將各校的產出物張貼至主視覺牆面，形成那個象徵聯盟集體舞台的視覺呈現。引導給予彼此掌聲。</p>
+    </div>
+  </div>
+</div>
+
+<!-- TEAM SECTION -->
+<div class="section" id="team">
+  <div class="section-label">人力配置</div>
+  <h2>14 位引導員</h2>
+  <p class="lead">每一位後台夥伴負責陪伴一所學校走完全程。你的角色是「同行者」，不是「管理者」。</p>
+
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar" style="background: var(--caramel);">曼</div>
+      <div class="team-name">曼玲</div>
+      <div class="team-dept">AD</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background: var(--roast);">廷</div>
+      <div class="team-name">廷瑜</div>
+      <div class="team-dept">AD</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background: var(--caramel);">妍</div>
+      <div class="team-name">妍蓁</div>
+      <div class="team-dept">AD</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background: var(--sage);">胡</div>
+      <div class="team-name">胡茵</div>
+      <div class="team-dept">TD</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background: var(--sage);">凱</div>
+      <div class="team-name">凱勲</div>
+      <div class="team-dept">TD</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background: var(--sage);">彥</div>
+      <div class="team-name">彥汝</div>
+      <div class="team-dept">TD</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background: var(--sage);">承</div>
+      <div class="team-name">承郁</div>
+      <div class="team-dept">TD</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background: var(--sage);">廷</div>
+      <div class="team-name">廷汝</div>
+      <div class="team-dept">TD</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background: var(--stage-red);">子</div>
+      <div class="team-name">子淵</div>
+      <div class="team-dept">ID</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background: var(--stage-red);">R</div>
+      <div class="team-name">Rick</div>
+      <div class="team-dept">ID</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background: var(--muted);">姝</div>
+      <div class="team-name">姝涵</div>
+      <div class="team-dept">OD</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background: var(--muted);">李</div>
+      <div class="team-name">李玟</div>
+      <div class="team-dept">OD</div>
+    </div>
+    <div class="team-card" style="border-style: dashed;">
+      <div class="team-avatar" style="background: rgba(200,129,59,0.3);">?</div>
+      <div class="team-name" style="color: var(--muted);">待定</div>
+      <div class="team-dept">—</div>
+    </div>
+    <div class="team-card" style="border-style: dashed;">
+      <div class="team-avatar" style="background: rgba(200,129,59,0.3);">?</div>
+      <div class="team-name" style="color: var(--muted);">待定</div>
+      <div class="team-dept">—</div>
+    </div>
+  </div>
+</div>
+
+<!-- KEY PRINCIPLES -->
+<div class="section" id="principles">
+  <div class="section-label">引導員心法</div>
+  <h2>四個核心原則</h2>
+  <p class="lead">從 Flow Map 自導手冊提煉的精髓，適用於今天這個特殊場景。</p>
+
+  <div class="principles-grid">
+    <div class="principle-card">
+      <div class="principle-num">01</div>
+      <div class="principle-title">校長的節點作用</div>
+      <div class="principle-body">觀察並支持校長成為 Bottom-up 動能的「匯流點」。你不是要管理校長，而是要在旁邊確認這個能量通道是暢通的。當校長在主導的時候，退一步；當老師的聲音被壓住的時候，創造空間。</div>
+    </div>
+    <div class="principle-card">
+      <div class="principle-num">02</div>
+      <div class="principle-title">護持空間，不填空白</div>
+      <div class="principle-body">沈默的時刻是最珍貴的。當你問了一個問題，心裡數到十，不要急著自己回答。你的任務是讓那個沈默有份量，讓大家感受到：這裡是安全的，說出來的話是被認真對待的。</div>
+    </div>
+    <div class="principle-card">
+      <div class="principle-num">03</div>
+      <div class="principle-title">連續性的敘事</div>
+      <div class="principle-body">不要讓今天淪為「一次性的感動」。在 Harvest 環節，協助老師把行動連結到「進步的軸線」上——這個改變是看得見的、是接續過去的、是可以持續的。組織的變化，他們需要有可以依持的敘事。</div>
+    </div>
+    <div class="principle-card">
+      <div class="principle-num">04</div>
+      <div class="principle-title">WE 的價值感</div>
+      <div class="principle-body">消弭「在傘下」與「在其中」的距離，讓不容易進入狀況的人也找到參與的方式。你的責任是讓每個人都感受到：今天，我是這個舞台的一部分，而不是觀眾。</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">聯盟願景集體敘畫｜引導員手冊</div>
+    <div style="margin-top: 4px; font-size: 12px;">共識營 0807 ｜ 後台培育課程</div>
+  </div>
+  <div style="text-align: right; font-size: 12px; color: var(--latte);">
+    <div>14 所學校 · 14 位引導員</div>
+    <div style="margin-top: 4px;">都在同一杯咖啡裡</div>
+  </div>
+</footer>
+
+</body>
+</html>
